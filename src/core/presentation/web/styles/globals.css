@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global Typography Styles */
+html,
+body {
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Global Layout Styles */
+body {
+  margin: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Global Navigation Styles */
+.nav-item {
+  @apply flex items-center px-4 py-2 rounded-md text-sm font-medium;
+}
+
+.nav-link {
+  @apply text-gray-900 hover:bg-gray-200;
+}
+
+/* Global Form Styles */
+.form-field {
+  @apply mb-4;
+}
+
+.form-label {
+  @apply block text-gray-700 font-bold mb-2;
+}
+
+.form-input {
+  @apply w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring focus:ring-blue-500;
+}
+
+/* Global Card Styles */
+.card {
+  @apply bg-white shadow-md rounded-md p-4;
+}
+
+/* Global Modal Styles */
+.modal {
+  @apply fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center z-50 bg-gray-900 bg-opacity-50;
+}
+
+.modal-content {
+  @apply bg-white rounded-md shadow-lg p-6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    @apply px-2;
+  }
+  .nav-item {
+    @apply flex-col;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    @apply px-4;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    @apply px-6;
+  }
+}
+
+/* Theme-Specific Styles (Optional) */
+.dark {
+  @apply bg-gray-900 text-white;
+}
+
+.light {
+  @apply bg-white text-gray-900;
+}
