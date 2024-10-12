@@ -1,0 +1,23 @@
+name: Deploy to Vercel
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+      - run: npm install
+      - run: npm run build
+      - uses: vercel/vercel-action@v2
+        with:
+          token: ${{ secrets.VERCEL_TOKEN }}
+          project: ${{ secrets.VERCEL_PROJECT_ID }}
+          buildCommand: npm run build
+          outputDirectory: out
